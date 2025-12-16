@@ -1,0 +1,131 @@
+[0;34m[INFO][0m Creating branch: fix/nextjs-cve-20251216
+Switched to a new branch 'fix/nextjs-cve-20251216'
+[0;32m✅ [SUCCESS][0m Created branch: fix/nextjs-cve-20251216
+[0;34m[INFO][0m Running npx fix-react2shell-next --fix...
+
+[1mfix-react2shell-next[0m[2m - Next.js vulnerability scanner
+[0m
+[2mChecking for 4 known vulnerabilities:
+[0m
+[2m  - [0m[31mCVE-2025-66478[0m[2m (critical): Remote code execution via crafted RSC payload[0m
+[2m  - [0m[33mCVE-2025-55184[0m[2m (high): DoS via malicious HTTP request causing server to hang and consume CPU[0m
+[2m  - [0m[36mCVE-2025-55183[0m[2m (medium): Compiled Server Action source code can be exposed via malicious request[0m
+[2m  - [0m[33mCVE-2025-67779[0m[2m (high): Incomplete fix for CVE-2025-55184 DoS via malicious RSC payload causing infinite loop[0m
+
+[2mFound 1 package.json file(s)
+[0m
+[31mFound 1 vulnerable file(s):
+[0m
+[33m  package.json[0m
+[2m     next: [0m[31m15.3.0[0m[2m -> [0m[32m15.3.8[0m[35m [CVE-2025-66478, CVE-2025-55184, CVE-2025-55183, CVE-2025-67779][0m
+
+[36m
+Applying fixes...
+[0m
+[32m   Updated package.json[0m
+[36m
+Installing dependencies...
+[0m
+[2m. (pnpm)[0m
+[2m
+$ pnpm install
+[0m
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Progress: resolved 1366, reused 1289, downloaded 0, added 0
+Progress: resolved 1434, reused 1336, downloaded 0, added 0
+ WARN  7 deprecated subdependencies found: @babel/plugin-proposal-class-properties@7.18.6, @babel/plugin-proposal-object-rest-spread@7.20.7, glob@7.2.3, inflight@1.0.6, lodash.get@4.4.2, oniguruma-to-js@0.4.3, react-beautiful-dnd@13.1.1
+Packages: +1340
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 1436, reused 1338, downloaded 0, added 58
+Progress: resolved 1436, reused 1338, downloaded 0, added 627
+Progress: resolved 1436, reused 1338, downloaded 0, added 1007
+Progress: resolved 1436, reused 1338, downloaded 0, added 1136
+Progress: resolved 1436, reused 1338, downloaded 0, added 1329
+Progress: resolved 1436, reused 1338, downloaded 0, added 1340, done
+ WARN  Issues with peer dependencies found
+.
+└─┬ @tinacms/cli 1.11.0
+  ├─┬ tinacms 2.9.0
+  │ ├─┬ @tinacms/schema-tools 1.9.1
+  │ │ └── ✕ unmet peer yup@^0.32.0: found 1.6.1
+  │ └─┬ @tinacms/search 1.1.1
+  │   └─┬ @tinacms/graphql 1.6.1
+  │     └─┬ @tinacms/mdx 1.8.1
+  │       └─┬ typedoc 0.26.11
+  │         └── ✕ unmet peer typescript@"4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x": found 5.9.3
+  └─┬ @tinacms/metrics 1.1.0
+    └── ✕ unmet peer fs-extra@^9.0.1: found 11.3.0
+
+dependencies:
++ @headlessui/react 2.2.9
++ @radix-ui/react-avatar 1.1.10
++ @radix-ui/react-slot 1.2.3
++ @tailwindcss/postcss 4.1.15
++ @tailwindcss/typography 0.5.19
++ class-variance-authority 0.7.1
++ clsx 2.1.1
++ date-fns 3.6.0
++ lucide-react 0.484.0
++ mermaid 11.12.0
++ motion 12.23.24
++ next 15.3.8 (16.0.10 is available)
++ next-themes 0.4.6
++ react 18.3.1
++ react-dom 18.3.1
++ react-icons 5.5.0
++ react-player 2.16.1
++ react-use-measure 2.1.7
++ shiki 3.13.0
++ styled-jsx 5.1.7
++ tailwind-merge 2.6.0
++ tailwindcss 4.1.15
++ tinacms 2.9.0
++ tw-animate-css 1.4.0
++ usehooks-ts 3.1.1
+
+devDependencies:
++ @biomejs/biome 1.9.4
++ @svgr/webpack 8.1.0
++ @tinacms/cli 1.11.0
++ @types/js-cookie 3.0.6
++ @types/node 22.18.12
++ @types/react 18.3.26
++ @types/styled-components 5.1.34
++ autoprefixer 10.4.21
++ postcss 8.5.6
++ postcss-import 16.1.1
++ postcss-nesting 13.0.2
++ typescript 5.9.3
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: @biomejs/biome, better-sqlite3, esbuild, sharp.     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 8.3s using pnpm v10.20.0
+[32m
+Patches applied![0m
+[2m   Remember to test your app and commit the changes.
+[0m
+[0;32m✅ [SUCCESS][0m Fix command completed - vulnerabilities found and fixed
+[0;34m[INFO][0m Updating lockfiles for modified packages...
+[0;34m[INFO][0m   Found modified package.json in: .
+[0;34m[INFO][0m Processing directory: .
+[0;34m[INFO][0m   Detected pnpm-lock.yaml in ., running pnpm install...
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: @biomejs/biome, better-sqlite3, esbuild, sharp.     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 298ms using pnpm v10.20.0
+[0;32m✅ [SUCCESS][0m Lockfiles updated
+[0;34m[INFO][0m Changes detected, proceeding with commit...
