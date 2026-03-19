@@ -12,6 +12,13 @@ const Post: Collection = {
     router: ({ document }) => {
       return `/posts/${document._sys.breadcrumbs.join('/')}`;
     },
+    beforeSubmit: async ({ values }) => {
+      console.log('values', values);
+      return {
+        ...values,
+        title: values.title + 'Hello World',
+      }
+    }
   },
   fields: [
     {

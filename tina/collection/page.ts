@@ -7,6 +7,7 @@ import { videoBlockSchema } from '@/components/blocks/video';
 import { calloutBlockSchema } from '@/components/blocks/callout';
 import { statsBlockSchema } from '@/components/blocks/stats';
 import { ctaBlockSchema } from '@/components/blocks/call-to-action';
+import { PageBlocks } from '../__generated__/types';
 
 const Page: Collection = {
   label: 'Pages',
