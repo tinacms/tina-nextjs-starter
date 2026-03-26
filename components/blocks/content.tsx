@@ -2,6 +2,7 @@
 import React from 'react';
 
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
+import { components } from '../mdx-components';
 import type { Template } from 'tinacms';
 import { PageBlocksContent } from '../../tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
@@ -16,6 +17,7 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
       <TinaMarkdown
         content={data.body}
         components={{
+          ...components,
           mermaid: (props: any) => <Mermaid {...props} />,
           scriptCopyBlock: (props: any) => <ScriptCopyBtn {...props} />,
         }}

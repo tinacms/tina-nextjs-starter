@@ -6,6 +6,7 @@ import {
 import type { Template } from 'tinacms';
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { components } from "../mdx-components";
 import { Icon } from "../icon";
 import { iconSchema } from "../../tina/fields/icon";
 import { Card, CardContent, CardHeader } from "../ui/card";
@@ -64,6 +65,7 @@ export const Feature: React.FC<PageBlocksFeaturesItems> = (data) => {
         <TinaMarkdown
           data-tina-field={tinaField(data, "text")}
           content={data.text}
+          components={components}
         />
       </CardContent>
     </div>
