@@ -14,7 +14,7 @@ function getContrastColor(hex: string): string {
   const b = parseInt(c.substring(4, 6), 16);
   // Perceived luminance (WCAG formula)
   const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-  return luminance > 0.5 ? '#000000' : '#ffffff';
+  return luminance > 0.5 ? 'var(--highlight-text-dark)' : 'var(--highlight-text-light)';
 }
 
 export const components: Components<{
@@ -119,14 +119,11 @@ export const components: Components<{
       </span>
     );
   },
-  highlight: (props: { children: React.ReactNode; color?: string } | undefined) => {
-    const backgroundColor = props?.color || '#FEF08A';
-    return (
-      <mark style={{ backgroundColor, color: getContrastColor(backgroundColor) }}>
-        {props?.children}
-      </mark>
-    );
-  },
+  highlight: (props: { children: React.ReactNode; color?: string } | undefined) => (
+    <mark style={{ backgroundColor: props?.color, color: getContrastColor(props?.color ?? '') }}>
+      {props?.children}
+    </mark>
+  ),
   mermaid: (props: any) => <Mermaid {...props} />,
   video: (props) => {
     return <Video data={props} />;
