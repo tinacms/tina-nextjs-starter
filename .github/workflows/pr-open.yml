@@ -3,9 +3,14 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 env:
-  NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-  TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-  NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref }}
+  # Dummy values for fork-safe PR builds. `pnpm build-local` uses
+  # `tinacms build --content=local --skip-cloud-checks`, so it indexes
+  # content from the filesystem and skips cloud validation — these env
+  # vars just need to be present (not real) to satisfy the CLI's
+  # requirement that clientId/branch/token be configured.
+  NEXT_PUBLIC_TINA_CLIENT_ID: fake-id-for-smoke
+  TINA_TOKEN: fake-token-for-smoke
+  NEXT_PUBLIC_TINA_BRANCH: main
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -42,4 +47,4 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm build
+        run: pnpm build-local
