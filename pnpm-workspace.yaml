@@ -1,3 +1,5 @@
+packages:                # keeps pnpm 9 (e.g. Vercel's default) treating this as a project
+  - '.'
 onlyBuiltDependencies:   # pnpm 10
   - "@biomejs/biome"
   - "@tailwindcss/oxide"
