@@ -50,7 +50,7 @@ This starter can be deployed to GitHub Pages. A GitHub Actions workflow is inclu
 
 To deploy to GitHub Pages:
 
-1. In your repository settings, ensure GitHub Pages is enabled and set to deploy from the `gh-pages` branch
+1. In your repository settings, open **Pages** and set **Source** to **GitHub Actions**
 2. Push changes to your main branch - the workflow will automatically build and deploy the site
 
 > [!NOTE]

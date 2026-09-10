@@ -1,7 +1,13 @@
 import type { NextConfig } from 'next'
- 
+
+// The GitHub Pages workflow sets this. Pages serves a static export from a sub-path.
+const pagesBasePath = process.env.PAGES_BASE_PATH
+
 const nextConfig: NextConfig = {
+  output: pagesBasePath === undefined ? undefined : 'export',
+  basePath: pagesBasePath,
   images: {
+    unoptimized: pagesBasePath !== undefined,
     remotePatterns: [
       {
         protocol: 'https',
