@@ -4,29 +4,36 @@ on:
     branches:
       - dependabot/npm_and_yarn/**
 
+# Dependabot runs get a read-only token. The commit step must push.
+permissions:
+  contents: write
+
 jobs:
   update-tinacms:
     runs-on: ubuntu-latest
     steps:
       # Clone repo
       - name: Check out repo to update
-        uses: actions/checkout@v2
+        uses: actions/checkout@v7
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 10
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
       # Install deps, update Tina packages, update schema
       - name: Install dependencies
-        run: yarn install
+        run: pnpm install
       - name: Update Tina packages
-        run: yarn upgrade tinacms@latest @tinacms/cli@latest
+        run: pnpm update --latest tinacms @tinacms/cli
       - name: Update Schema
-        run: yarn tinacms audit
+        run: pnpm tinacms audit
       # Commit changes
       - name: Commit changes back to branch
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v11
         with:
           message: "Update TinaCMS generated files"
-          branch: ${{ github.ref }}
           committer_name: GitHub Actions
           committer_email: actions@github.com
