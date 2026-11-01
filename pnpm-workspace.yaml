@@ -8,6 +8,7 @@ onlyBuiltDependencies:   # pnpm 10
   - esbuild
   - protobufjs
   - sharp
+  - workerd
 allowBuilds:             # pnpm 11
   "@biomejs/biome": true
   "@tailwindcss/oxide": true
@@ -16,3 +17,4 @@ allowBuilds:             # pnpm 11
   esbuild: true
   protobufjs: true
   sharp: true
+  workerd: true
