@@ -3,7 +3,8 @@ import React from 'react';
 import { Button, wrapFieldsWithMeta } from 'tinacms';
 import { BiChevronRight } from 'react-icons/bi';
 import { GoCircleSlash } from 'react-icons/go';
-import { Icon, IconOptions } from '../../components/icon';
+import { Icon } from '../../components/icon';
+import { IconOptions } from '../../components/icon-options';
 import { Popover, PopoverButton, Transition, PopoverPanel } from '@headlessui/react';
 import { ColorPickerInput } from './color';
 
