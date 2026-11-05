@@ -1,4 +1,4 @@
-packages:                # keeps pnpm 9 (e.g. Vercel's default) treating this as a project
+packages:                # keeps pnpm 9 treating this as a project (package.json pins pnpm 10)
   - '.'
 onlyBuiltDependencies:   # pnpm 10
   - "@biomejs/biome"
@@ -18,6 +18,6 @@ allowBuilds:             # pnpm 11
   protobufjs: true
   sharp: true
   workerd: true
-# Works around the 1024 open-file limit on Cloudflare Workers Builds. Remove once @tinacms/cli sets maxParallelFileOps itself.
+# Works around the 1024 open-file limit on Cloudflare Workers Builds. Remove once @tinacms/cli sets maxParallelFileOps itself: https://github.com/tinacms/tinacms/issues/8012
 patchedDependencies:
   "@tinacms/cli": patches/@tinacms__cli.patch
