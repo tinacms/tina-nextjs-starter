@@ -18,3 +18,6 @@ allowBuilds:             # pnpm 11
   protobufjs: true
   sharp: true
   workerd: true
+# Works around the 1024 open-file limit on Cloudflare Workers Builds. Remove once @tinacms/cli sets maxParallelFileOps itself.
+patchedDependencies:
+  "@tinacms/cli": patches/@tinacms__cli.patch
