@@ -1,4 +1,4 @@
-packages:                # keeps pnpm 9 (e.g. Vercel's default) treating this as a project
+packages:                # keeps pnpm 9 treating this as a project (package.json pins pnpm 10)
   - '.'
 onlyBuiltDependencies:   # pnpm 10
   - "@biomejs/biome"
@@ -8,6 +8,7 @@ onlyBuiltDependencies:   # pnpm 10
   - esbuild
   - protobufjs
   - sharp
+  - workerd
 allowBuilds:             # pnpm 11
   "@biomejs/biome": true
   "@tailwindcss/oxide": true
@@ -16,3 +17,4 @@ allowBuilds:             # pnpm 11
   esbuild: true
   protobufjs: true
   sharp: true
+  workerd: true

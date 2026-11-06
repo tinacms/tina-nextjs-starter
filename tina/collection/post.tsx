@@ -1,5 +1,5 @@
 import React from 'react';
-import { videoBlockSchema } from '@/components/blocks/video';
+import { videoBlockSchema } from '../blocks/video';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import type { Collection } from 'tinacms';
 

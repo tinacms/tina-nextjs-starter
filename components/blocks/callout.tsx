@@ -1,11 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import type { Template } from 'tinacms';
 import { tinaField } from 'tinacms/dist/react';
 import { PageBlocksCallout } from '@/tina/__generated__/types';
 import { ArrowRight } from 'lucide-react';
 import { AnimatedGroup } from '../motion-primitives/animated-group';
-import { Section, sectionBlockSchemaField } from '../layout/section';
+import { Section } from '../layout/section';
 import type { Transition } from 'motion/react';
 
 const transitionVariants = {
@@ -56,29 +55,4 @@ export const Callout = ({ data }: { data: PageBlocksCallout }) => {
             </AnimatedGroup>
         </Section>
     );
-};
-
-export const calloutBlockSchema: Template = {
-    name: 'callout',
-    label: 'Callout',
-    ui: {
-        previewSrc: '/blocks/callout.png',
-        defaultItem: {
-            url: 'https://tina.io/editorial-workflow',
-            text: 'Support for live editing and editorial workflow',
-        },
-    },
-    fields: [
-        sectionBlockSchemaField as any,
-        {
-            type: 'string',
-            label: 'Text',
-            name: 'text',
-        },
-        {
-            type: 'string',
-            label: 'Url',
-            name: 'url',
-        },
-    ],
 };
