@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  '@tinacms/cli':
-    hash: 0c50b289911ff9e1a7232f8eaad97013a9d461a48093998eb429002cd9f8e6a7
-    path: patches/@tinacms__cli.patch
-
 importers:
 
   .:
@@ -100,7 +95,7 @@ importers:
         version: 8.1.0(typescript@5.9.3)
       '@tinacms/cli':
         specifier: ^4.0.4
-        version: 4.0.4(patch_hash=0c50b289911ff9e1a7232f8eaad97013a9d461a48093998eb429002cd9f8e6a7)(@codemirror/language@6.0.0)(@emotion/is-prop-valid@0.8.8)(@types/hoist-non-react-statics@3.3.5)(@types/node@22.18.12)(@types/react@18.3.26)(abstract-level@1.0.4)(immer@10.1.1)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.63.4)(scheduler@0.26.0)(slate-dom@0.114.0(slate@0.114.0))(slate@0.114.0)(terser@5.36.0)(use-sync-external-store@1.5.0(react@18.3.1))(yaml@2.9.1)
+        version: 4.0.4(@codemirror/language@6.0.0)(@emotion/is-prop-valid@0.8.8)(@types/hoist-non-react-statics@3.3.5)(@types/node@22.18.12)(@types/react@18.3.26)(abstract-level@1.0.4)(immer@10.1.1)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.63.4)(scheduler@0.26.0)(slate-dom@0.114.0(slate@0.114.0))(slate@0.114.0)(terser@5.36.0)(use-sync-external-store@1.5.0(react@18.3.1))(yaml@2.9.1)
       '@types/js-cookie':
         specifier: ^3.0.6
         version: 3.0.6
@@ -11295,7 +11290,7 @@ snapshots:
 
   '@tinacms/bridge@0.3.1': {}
 
-  '@tinacms/cli@4.0.4(patch_hash=0c50b289911ff9e1a7232f8eaad97013a9d461a48093998eb429002cd9f8e6a7)(@codemirror/language@6.0.0)(@emotion/is-prop-valid@0.8.8)(@types/hoist-non-react-statics@3.3.5)(@types/node@22.18.12)(@types/react@18.3.26)(abstract-level@1.0.4)(immer@10.1.1)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.63.4)(scheduler@0.26.0)(slate-dom@0.114.0(slate@0.114.0))(slate@0.114.0)(terser@5.36.0)(use-sync-external-store@1.5.0(react@18.3.1))(yaml@2.9.1)':
+  '@tinacms/cli@4.0.4(@codemirror/language@6.0.0)(@emotion/is-prop-valid@0.8.8)(@types/hoist-non-react-statics@3.3.5)(@types/node@22.18.12)(@types/react@18.3.26)(abstract-level@1.0.4)(immer@10.1.1)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.63.4)(scheduler@0.26.0)(slate-dom@0.114.0(slate@0.114.0))(slate@0.114.0)(terser@5.36.0)(use-sync-external-store@1.5.0(react@18.3.1))(yaml@2.9.1)':
     dependencies:
       '@graphql-codegen/core': 6.2.0(graphql@15.8.0)
       '@graphql-codegen/plugin-helpers': 7.3.0(graphql@15.8.0)

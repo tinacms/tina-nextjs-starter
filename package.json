@@ -2,10 +2,9 @@
   "name": "@tinacms/starter",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@10.34.9",
   "scripts": {
     "dev": "tinacms dev -c \"next dev --turbopack\"",
-    "build": "node scripts/check-tina-build-env.mjs && tinacms build && next build",
+    "build": "node scripts/check-tina-build-env.mjs && node scripts/limit-tina-file-ops.mjs && tinacms build && next build",
     "build-local": "tinacms build --content=local --skip-cloud-checks -c \"next build\"",
     "start": "tinacms build && next start",
     "export": "npm run build && next export",
