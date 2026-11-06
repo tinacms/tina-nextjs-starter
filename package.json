@@ -11,6 +11,9 @@
     "lint": "biome lint",
     "dev:build": "next build"
   },
+  "resolutions": {
+    "chevrotain": "^11.0.3"
+  },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@svgr/webpack": "^8.1.0",
