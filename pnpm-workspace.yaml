@@ -1,4 +1,4 @@
-packages:                # keeps pnpm 9 treating this as a project (package.json pins pnpm 10)
+packages:                # keeps pnpm 9 treating this as a project (e.g. Vercel's default)
   - '.'
 onlyBuiltDependencies:   # pnpm 10
   - "@biomejs/biome"
