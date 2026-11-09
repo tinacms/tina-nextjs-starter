@@ -28,6 +28,8 @@
 			"**/.yarn",
 			"**/node_modules",
             "**/out/**",
+			"**/.open-next/**",
+			"**/.wrangler/**",
 			"**/.yarnrc.yml",
 			"**/yarn.lock",
 			"**/*.gql",
@@ -77,7 +79,9 @@
 			"**/.next/**",
 			"**/*.d.ts",
             "**/out/**",
-            "**/public/admin/**"
+            "**/public/admin/**",
+			"**/.open-next/**",
+			"**/.wrangler/**"
 		]
 	},
 	"javascript": {

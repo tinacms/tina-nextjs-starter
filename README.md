@@ -63,9 +63,56 @@ To deploy to GitHub Pages:
 > [!IMPORTANT]
 > GitHub Pages does not support server side code, so this will run as a static site. If you don't want to deploy to GitHub pages, just delete `.github/workflows/build-and-deploy.yml`
 
+### Cloudflare Workers
+
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/tinacms/tina-nextjs-starter)
+
+The button copies this repository to your GitHub account and creates a Cloudflare Worker that builds with [OpenNext](https://opennext.js.org/cloudflare) on every push.
+
+#### Before your first build succeeds
+
+The first build fails on purpose with `Missing TinaCloud build variables`. `tinacms build` needs your TinaCloud keys while the site builds, and Worker runtime "Variables and Secrets" are not visible to the build.
+
+1. In the Cloudflare dashboard, open your Worker > **Settings** > **Build** > **Variables and secrets**
+2. Add `NEXT_PUBLIC_TINA_CLIENT_ID` and `TINA_TOKEN` as **build** variables, with values from your project at [app.tina.io](https://app.tina.io)
+3. Retry the build
+
+You don't need to set `NEXT_PUBLIC_TINA_BRANCH`. Workers Builds sets `WORKERS_CI_BRANCH`, and the starter uses it as the Tina branch.
+
+#### Build settings
+
+If you set up the Worker yourself (not with the button), use these commands on the setup page:
+
+- Build command: `pnpm run build`
+- Deploy command: `pnpm run deploy`
+- Non-production branch deploy command: `pnpm run upload`
+
+#### Run the Worker locally
+
+With your keys in `.env`:
+
+```bash
+pnpm preview
+```
+
+To deploy from your machine:
+
+```bash
+pnpm exec opennextjs-cloudflare build && pnpm exec opennextjs-cloudflare deploy
+```
+
+`pnpm build` only builds for Cloudflare when `WORKERS_CI` (set by Workers Builds) or `DEPLOY_ADAPTER=cloudflare` is set. Vercel and GitHub Pages builds are unchanged.
+
+#### Limits
+
+- The Worker uploads at about 1.1 MiB gzip (5.0 MiB uncompressed), measured with `wrangler deploy --dry-run`. This fits the Workers Free plan.
+- Pages are prerendered at build time. Each content change in TinaCloud is a git commit, which starts a new build, so there is no time-based revalidation. See [OpenNext caching](https://opennext.js.org/cloudflare/caching) if you need it.
+- Images are served unoptimized. To turn on optimization, add an `IMAGES` binding as described in the [OpenNext image docs](https://opennext.js.org/cloudflare/howtos/image) and remove `isCloudflare` from `images.unoptimized` in `next.config.ts`.
+- Next.js can't be served from Cloudflare Pages. This deploys to Cloudflare Workers.
+
 ### Building the Starter Locally (Using the hosted content API)
 
-Replace the `.env.example`, with `.env`
+Copy `.env.example` to `.env` and uncomment the lines you use:
 
 ```
 NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the project you create at app.tina.io>

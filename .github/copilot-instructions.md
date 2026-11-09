@@ -771,6 +771,8 @@ src/
     └── tina-client.ts      # TinaClient setup
 ```
 
+Keep Tina schemas under `tina/`. Never import `tina/fields`, `tina/blocks` or `tinacms` (value imports) from `app/` or `components/`: it pulls the CMS editor into the server bundle, and the Cloudflare Worker has a size limit.
+
 ### Naming Conventions
 
 - **Files**: kebab-case (e.g., `client-page.tsx`, `mdx-components.tsx`)

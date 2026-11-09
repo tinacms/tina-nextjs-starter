@@ -1,0 +1,4 @@
+# Cloudflare serves static assets (including /admin) without the next.config.ts headers. Keep these in sync.
+/*
+  X-Frame-Options: SAMEORIGIN
+  Content-Security-Policy: frame-ancestors 'self'
